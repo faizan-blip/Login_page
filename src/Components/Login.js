@@ -48,6 +48,10 @@ const submit = () => {
       }, 2000);
     } else {
       setSuccess(true);
+      setValues({
+        email:email,
+        password:password,
+      })
       setButton(true)
       setTimeout(() => {
         setSuccess(false);
@@ -60,7 +64,7 @@ const submit = () => {
     const re = /\S+@\S+\.\S+/;
     return re.test(email);
   };
-
+console.log(values)
   return (
     <>
     <Box sx={{background:"#fff" ,  height:{lg:"100vh" , xs:"auto" , xl:"100vh"}, display:"flex" ,flexDirection:"column"  , alignItems:"center !important"  , gap:{sm:"40px" , xs:"0px"} , justifyContent: error1 || success || emailerror || passerror ? 'start' : 'center' }}>
